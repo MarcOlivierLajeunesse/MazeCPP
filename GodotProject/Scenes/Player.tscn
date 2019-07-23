@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/Player.gdns" type="Script" id=1]
+[ext_resource path="res://Assets/Textures/dark_block_128x128.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Textures/stickman.png" type="Texture" id=3]
+
+[node name="Player" type="KinematicBody2D"]
+collision_mask = 6
+script = ExtResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="DarkBackground" type="TextureRect" parent="Camera2D"]
+visible = false
+margin_left = -1920.0
+margin_top = -1080.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+texture = ExtResource( 2 )
+stretch_mode = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 68.5236, 3.9095, 78.6693, 7.02084, 83.4039, 17.8429, 82.8628, 24.4714, 71.0938, 31.1, 62.9772, 30.2883, 59.4601, 37.4579, 78.9398, 43.0043, 86.2447, 44.2217, 88.2738, 49.4975, 83.2686, 52.7441, 75.8285, 51.3914, 58.1073, 45.7098, 57.9997, 59.5592, 61.1587, 78.4021, 79.3772, 100.669, 80.8494, 113.735, 73.1204, 115.391, 71.6481, 103.43, 57.6622, 84.6589, 44.4123, 99.7491, 41.8359, 116.679, 35.211, 116.679, 34.4749, 99.013, 52.1414, 77.4819, 49.381, 58.5273, 50.1171, 46.3815, 38.8915, 59.8154, 30.2423, 62.3918, 27.2979, 58.1592, 29.5062, 53.5586, 34.6589, 52.0863, 51.9574, 34.2358, 53.9817, 28.531, 50.1171, 17.3054, 56.0059, 5.52779 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="CollisionPolygon2D"]
+texture = ExtResource( 3 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
